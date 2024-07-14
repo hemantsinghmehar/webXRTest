@@ -1,0 +1,56 @@
+meteor add session
+meteor remove insecure
+meteor remove autopublish
+meteor add check
+
+#Installing Boot Strap
+meteor npm install --save bootstrap@4.6.0
+meteor add fourseven:scss
+meteor npm install --save jquery popper.js
+rename the main.css to main.scss and add @import "../node_modules/bootstrap/scss/bootstrap.scss"; in main.scss
+meteor add fortawesome:fontawesome
+meteor npm install --save pc-bootstrap4-datetimepicker crypto-js
+
+#Collections
+meteor add aldeed:simple-schema
+meteor add aldeed:collection2
+meteor npm install --save simpl-schema
+
+#Alert Package
+npm install sweetalert --save
+
+#UUID
+npm install uuid-random --save
+https://www.npmjs.com/package/uuid-random
+
+#Add http
+meteor add http
+
+#Account Module
+meteor add accounts-password
+meteor npm install --save bcrypt
+
+#crypto
+meteor npm install --save crypto-js
+https://www.npmjs.com/package/crypto-js
+
+#recaptcha:
+Site Key:  6LeHXnYmAAAAACJnc22glM0CfpDUbT2VaMLSVeNc
+Secret Key: 6LeHXnYmAAAAACWvqIgq0sOxCEjxpXSGvrWqQN75
+
+meteor npm install --save three
+
+#SSL for developement:
+openssl genrsa -out key.pem 2048
+openssl req -new -key key.pem -out csr.pem
+openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem
+
+meteor add force-ssl
+meteor run --ssl --ssl-key-file key.pem --ssl-cert-file cert.pem
+
+
+meteor build ../built_voucherServer/ --architecture os.linux.x86_64 --server=https://voucher.callbyapp.com --verbose
+
+netstat -ltnp | grep "0.0.0.0:9100" # for Tes Server
+
+
